@@ -19,6 +19,9 @@
 		0F069C7C195F102800B9BEB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F069C64195F102800B9BEB8 /* UIKit.framework */; };
 		0F069C84195F102800B9BEB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F069C82195F102800B9BEB8 /* InfoPlist.strings */; };
 		0F069C86195F102800B9BEB8 /* PGAutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C85195F102800B9BEB8 /* PGAutoLayoutTests.m */; };
+		0F069C91195F11EB00B9BEB8 /* MainLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F069C90195F11EB00B9BEB8 /* MainLayout.storyboard */; };
+		0F069C94195F13B000B9BEB8 /* PGMainMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C93195F13B000B9BEB8 /* PGMainMenuTableViewController.m */; };
+		0F069C98195F1C7E00B9BEB8 /* PGSimpleLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C97195F1C7E00B9BEB8 /* PGSimpleLayoutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		0F069C81195F102800B9BEB8 /* PGAutoLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PGAutoLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		0F069C83195F102800B9BEB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0F069C85195F102800B9BEB8 /* PGAutoLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGAutoLayoutTests.m; sourceTree = "<group>"; };
+		0F069C90195F11EB00B9BEB8 /* MainLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainLayout.storyboard; sourceTree = "<group>"; };
+		0F069C92195F13B000B9BEB8 /* PGMainMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMainMenuTableViewController.h; sourceTree = "<group>"; };
+		0F069C93195F13B000B9BEB8 /* PGMainMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGMainMenuTableViewController.m; sourceTree = "<group>"; };
+		0F069C96195F1C7E00B9BEB8 /* PGSimpleLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSimpleLayoutViewController.h; sourceTree = "<group>"; };
+		0F069C97195F1C7E00B9BEB8 /* PGSimpleLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSimpleLayoutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 		0F069C66195F102800B9BEB8 /* PGAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				0F069C95195F13E300B9BEB8 /* Xib */,
+				0F069C8F195F11C800B9BEB8 /* Storyboard */,
 				0F069C6F195F102800B9BEB8 /* PGAppDelegate.h */,
 				0F069C70195F102800B9BEB8 /* PGAppDelegate.m */,
 				0F069C72195F102800B9BEB8 /* Images.xcassets */,
@@ -142,6 +152,25 @@
 				0F069C82195F102800B9BEB8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F069C8F195F11C800B9BEB8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0F069C90195F11EB00B9BEB8 /* MainLayout.storyboard */,
+				0F069C92195F13B000B9BEB8 /* PGMainMenuTableViewController.h */,
+				0F069C93195F13B000B9BEB8 /* PGMainMenuTableViewController.m */,
+				0F069C96195F1C7E00B9BEB8 /* PGSimpleLayoutViewController.h */,
+				0F069C97195F1C7E00B9BEB8 /* PGSimpleLayoutViewController.m */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		0F069C95195F13E300B9BEB8 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +251,7 @@
 			files = (
 				0F069C6B195F102800B9BEB8 /* InfoPlist.strings in Resources */,
 				0F069C73195F102800B9BEB8 /* Images.xcassets in Resources */,
+				0F069C91195F11EB00B9BEB8 /* MainLayout.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F069C94195F13B000B9BEB8 /* PGMainMenuTableViewController.m in Sources */,
 				0F069C6D195F102800B9BEB8 /* main.m in Sources */,
 				0F069C71195F102800B9BEB8 /* PGAppDelegate.m in Sources */,
+				0F069C98195F1C7E00B9BEB8 /* PGSimpleLayoutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
