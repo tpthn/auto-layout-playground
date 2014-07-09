@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="617" y="-769"/>
         </scene>
-        <!--Relative Layout View Controller - Relative Layout-->
+        <!--RelativeSB View Controller - Relative Layout-->
         <scene sceneID="c4b-FO-hVf">
             <objects>
-                <viewController id="tD2-nG-GgL" customClass="PGRelativeLayoutViewController" sceneMemberID="viewController">
+                <viewController id="tD2-nG-GgL" customClass="PGRelativeSBViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FuO-mP-Qoj"/>
                         <viewControllerLayoutGuide type="bottom" id="lyf-GQ-xba"/>

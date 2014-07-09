@@ -21,7 +21,7 @@
 		0F069C86195F102800B9BEB8 /* PGAutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C85195F102800B9BEB8 /* PGAutoLayoutTests.m */; };
 		0F069C91195F11EB00B9BEB8 /* MainLayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F069C90195F11EB00B9BEB8 /* MainLayout.storyboard */; };
 		0F069C94195F13B000B9BEB8 /* PGMainMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C93195F13B000B9BEB8 /* PGMainMenuTableViewController.m */; };
-		0F069C98195F1C7E00B9BEB8 /* PGRelativeLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C97195F1C7E00B9BEB8 /* PGRelativeLayoutViewController.m */; };
+		0F069C98195F1C7E00B9BEB8 /* PGRelativeSBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C97195F1C7E00B9BEB8 /* PGRelativeSBViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		0F069C90195F11EB00B9BEB8 /* MainLayout.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainLayout.storyboard; sourceTree = "<group>"; };
 		0F069C92195F13B000B9BEB8 /* PGMainMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMainMenuTableViewController.h; sourceTree = "<group>"; };
 		0F069C93195F13B000B9BEB8 /* PGMainMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGMainMenuTableViewController.m; sourceTree = "<group>"; };
-		0F069C96195F1C7E00B9BEB8 /* PGRelativeLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGRelativeLayoutViewController.h; sourceTree = "<group>"; };
-		0F069C97195F1C7E00B9BEB8 /* PGRelativeLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRelativeLayoutViewController.m; sourceTree = "<group>"; };
+		0F069C96195F1C7E00B9BEB8 /* PGRelativeSBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGRelativeSBViewController.h; sourceTree = "<group>"; };
+		0F069C97195F1C7E00B9BEB8 /* PGRelativeSBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRelativeSBViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +115,7 @@
 		0F069C66195F102800B9BEB8 /* PGAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				0F9D4E2E196DAC8500E86866 /* Programmatic */,
 				0F069C95195F13E300B9BEB8 /* Xib */,
 				0F069C8F195F11C800B9BEB8 /* Storyboard */,
 				0F069C6F195F102800B9BEB8 /* PGAppDelegate.h */,
@@ -160,8 +161,8 @@
 				0F069C90195F11EB00B9BEB8 /* MainLayout.storyboard */,
 				0F069C92195F13B000B9BEB8 /* PGMainMenuTableViewController.h */,
 				0F069C93195F13B000B9BEB8 /* PGMainMenuTableViewController.m */,
-				0F069C96195F1C7E00B9BEB8 /* PGRelativeLayoutViewController.h */,
-				0F069C97195F1C7E00B9BEB8 /* PGRelativeLayoutViewController.m */,
+				0F069C96195F1C7E00B9BEB8 /* PGRelativeSBViewController.h */,
+				0F069C97195F1C7E00B9BEB8 /* PGRelativeSBViewController.m */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -171,6 +172,13 @@
 			children = (
 			);
 			name = Xib;
+			sourceTree = "<group>";
+		};
+		0F9D4E2E196DAC8500E86866 /* Programmatic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Programmatic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +281,7 @@
 				0F069C94195F13B000B9BEB8 /* PGMainMenuTableViewController.m in Sources */,
 				0F069C6D195F102800B9BEB8 /* main.m in Sources */,
 				0F069C71195F102800B9BEB8 /* PGAppDelegate.m in Sources */,
-				0F069C98195F1C7E00B9BEB8 /* PGRelativeLayoutViewController.m in Sources */,
+				0F069C98195F1C7E00B9BEB8 /* PGRelativeSBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 PC Nguyen. All rights reserved.
 //
 
-#import "PGRelativeLayoutViewController.h"
+#import "PGRelativeSBViewController.h"
 
-@interface PGRelativeLayoutViewController ()
+@interface PGRelativeSBViewController ()
 
 @end
 
-@implementation PGRelativeLayoutViewController
+@implementation PGRelativeSBViewController
 
 - (void)viewDidLoad
 {

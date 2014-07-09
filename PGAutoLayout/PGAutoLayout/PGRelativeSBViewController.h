@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PGRelativeLayoutViewController : UIViewController
+@interface PGRelativeSBViewController : UIViewController
 
 @end
