@@ -21,7 +21,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="tD2-nG-GgL" kind="push" identifier="SegueSimpleLayout" id="ecp-Hq-dsa"/>
+                                    <segue destination="tD2-nG-GgL" kind="push" identifier="SegueRelativeLayout" id="ecp-Hq-dsa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="617" y="-769"/>
         </scene>
-        <!--Simple Layout View Controller - Simple Layout-->
+        <!--Relative Layout View Controller - Relative Layout-->
         <scene sceneID="c4b-FO-hVf">
             <objects>
-                <viewController id="tD2-nG-GgL" customClass="PGSimpleLayoutViewController" sceneMemberID="viewController">
+                <viewController id="tD2-nG-GgL" customClass="PGRelativeLayoutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FuO-mP-Qoj"/>
                         <viewControllerLayoutGuide type="bottom" id="lyf-GQ-xba"/>
@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Simple Layout" id="5nN-q4-yEH"/>
+                    <navigationItem key="navigationItem" title="Relative Layout" id="5nN-q4-yEH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJh-4O-q4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

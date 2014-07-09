@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 PC Nguyen. All rights reserved.
 //
 
-#import "PGSimpleLayoutViewController.h"
+#import "PGRelativeLayoutViewController.h"
 
-@interface PGSimpleLayoutViewController ()
+@interface PGRelativeLayoutViewController ()
 
 @end
 
-@implementation PGSimpleLayoutViewController
+@implementation PGRelativeLayoutViewController
 
 - (void)viewDidLoad
 {

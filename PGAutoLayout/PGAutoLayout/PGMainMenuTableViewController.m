@@ -8,16 +8,29 @@
 
 #import "PGMainMenuTableViewController.h"
 
+#define kPGMainMenuTableViewControllerXibKey				@"Xib Layout"
+#define kPGMainMenuTableViewControllerStoryboardKey			@"Storyboard Layout"
+#define kPGMainMenuTableViewControllerProgrammaticKey		@"Programmatic Layout"
+
+#define kPGMainMenuTableViewControllerBorderLayout				@"Border Layout"
+#define kPGMainMenuTableViewControllerRelativeLayout			@"Relative Layout"
+
 typedef enum {
-	MainMenuTableRowXibLayout = 0,
-	MainMenuTableRowSimpleLayout,
+	MainMenuTableSectionXib = 0,
+	MainMenuTableSectionStoryBoard,
+	MainMenuTableSectionProgrammatic,
+} MainMenuTableSection;
+
+typedef enum {
+	MainMenuTableRowBorderLayout = 0,
+	MainMenuTableRowRelativeLayout,
 } MainMenuTableRow;
 
 NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewControllerCellID";
 
 @interface PGMainMenuTableViewController ()
 
-@property (nonatomic, strong) NSArray *menuItems;
+@property (nonatomic, strong) NSDictionary *menuItems;
 
 @end
 
@@ -28,11 +41,15 @@ NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewContr
     [super viewDidLoad];
 }
 
-- (NSArray *)menuItems
+- (NSDictionary *)menuItems
 {
 	if (!_menuItems) {
-		_menuItems = @[@"Xib Layout",
-					   @"Simple Layout"];
+		_menuItems = @{kPGMainMenuTableViewControllerXibKey : @[kPGMainMenuTableViewControllerBorderLayout,
+																kPGMainMenuTableViewControllerRelativeLayout],
+					   kPGMainMenuTableViewControllerStoryboardKey : @[kPGMainMenuTableViewControllerBorderLayout,
+																	   kPGMainMenuTableViewControllerRelativeLayout],
+					   kPGMainMenuTableViewControllerProgrammaticKey: @[kPGMainMenuTableViewControllerBorderLayout,
+																		kPGMainMenuTableViewControllerRelativeLayout]};
 	}
 	
 	return _menuItems;
@@ -42,12 +59,15 @@ NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewContr
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [[self.menuItems allKeys] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.menuItems count];
+	NSString *key = [self keyForSection:section];
+	NSInteger count = [[self.menuItems valueForKey:key] count];
+	
+	return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,14 +78,54 @@ NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewContr
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:PGMainMenuTableViewControllerCellID];
 	}
 	
-	cell.textLabel.text = [self.menuItems objectAtIndex:indexPath.row];
+	NSString *key = [self keyForSection:indexPath.section];
+	NSArray *labels = [self.menuItems valueForKey:key];
+	cell.textLabel.text = [labels objectAtIndex:indexPath.row];
 	
-    return cell;
+	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[self performSegueWithIdentifier:@"SegueSimpleLayout" sender:self];
+	NSInteger section = indexPath.section;
+	
+	switch (section) {
+		case MainMenuTableSectionStoryBoard:
+			[self performSegueWithIdentifier:@"SegueRelativeLayout" sender:self];
+			break;
+			
+		default:
+			break;
+	}
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+	NSString *title = [self keyForSection:section];
+	return title;
+}
+
+#pragma mark - Private
+
+- (NSString *)keyForSection:(NSInteger)section
+{
+	NSString *key = @"";
+	
+	switch (section) {
+		case MainMenuTableSectionXib:
+			key = kPGMainMenuTableViewControllerXibKey;
+			break;
+		case MainMenuTableSectionStoryBoard:
+			key = kPGMainMenuTableViewControllerStoryboardKey;
+			break;
+		case MainMenuTableSectionProgrammatic:
+			key = kPGMainMenuTableViewControllerProgrammaticKey;
+			break;
+		default:
+			break;
+	}
+	
+	return key;
 }
 
 @end
