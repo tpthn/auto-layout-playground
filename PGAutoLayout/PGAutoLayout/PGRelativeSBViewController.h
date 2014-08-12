@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PGRelativeSBViewController : UIViewController
+@interface PGRelativeSBViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIPickerView *positionPickerView;
 
 @end
