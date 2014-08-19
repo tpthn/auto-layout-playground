@@ -7,6 +7,8 @@
 //
 
 #import "PGMainMenuTableViewController.h"
+#import "PGRelativeXibViewController.h"
+#import "PGRelativeViewController.h"
 
 #define kPGMainMenuTableViewControllerXibKey				@"Xib Layout"
 #define kPGMainMenuTableViewControllerStoryboardKey			@"Storyboard Layout"
@@ -91,9 +93,14 @@ NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewContr
 	
 	switch (section) {
 		case MainMenuTableSectionStoryBoard:
-			[self performSegueWithIdentifier:@"SegueRelativeLayout" sender:self];
+			[self loadRelativeStoryBoard];
 			break;
-			
+		case MainMenuTableSectionXib:
+			[self loadRelativeXibController];
+			break;
+		case MainMenuTableSectionProgrammatic:
+			[self loadRelativeController];
+			break;
 		default:
 			break;
 	}
@@ -126,6 +133,27 @@ NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewContr
 	}
 	
 	return key;
+}
+
+#pragma mark - Action Factory
+
+- (void)loadRelativeStoryBoard
+{
+	[self performSegueWithIdentifier:@"SegueRelativeLayout" sender:self];
+}
+
+- (void)loadRelativeXibController
+{
+	PGRelativeXibViewController *xibController = [[PGRelativeXibViewController alloc] init];
+	
+	[self.navigationController pushViewController:xibController animated:YES];
+}
+
+- (void)loadRelativeController
+{
+	PGRelativeViewController *viewController = [[PGRelativeViewController alloc] init];
+	
+	[self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

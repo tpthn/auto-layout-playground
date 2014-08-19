@@ -12,8 +12,9 @@
 
 @property (nonatomic, strong) NSArray *supportedPositions;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *positionPickerView;
+
 @property (weak, nonatomic) IBOutlet UILabel *blockLabel;
-@property (weak, nonatomic) IBOutlet UIPickerView *locationPicker;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *alignmentConstraint;
@@ -29,7 +30,7 @@
 	
 	self.supportedPositions = @[@"Top", @"Bottom", @"Left", @"Right"];
 	
-	[self.locationPicker selectRow:2 inComponent:0 animated:NO];
+	[self.positionPickerView selectRow:2 inComponent:0 animated:NO];
 }
 
 #pragma mark - UIPickerView Delegate / DataSource
@@ -59,42 +60,42 @@
 		[self adjustAlignmentConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																	 attribute:NSLayoutAttributeCenterX
 																	 relatedBy:NSLayoutRelationEqual
-																		toItem:self.locationPicker
+																		toItem:self.positionPickerView
 																	 attribute:NSLayoutAttributeCenterX
 																	multiplier:1.0f
 																	  constant:0.0f]];
 		[self adjustSpacingConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																   attribute:NSLayoutAttributeBottom
 																   relatedBy:NSLayoutRelationEqual
-																	  toItem:self.locationPicker
+																	  toItem:self.positionPickerView
 																   attribute:NSLayoutAttributeTop
 																  multiplier:1.0f constant:-8.0f]];
 	} else if ([supportPosition isEqualToString:@"Bottom"]) {
 		[self adjustAlignmentConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																	 attribute:NSLayoutAttributeCenterX
 																	 relatedBy:NSLayoutRelationEqual
-																		toItem:self.locationPicker
+																		toItem:self.positionPickerView
 																	 attribute:NSLayoutAttributeCenterX
 																	multiplier:1.0f
 																	  constant:0.0f]];
 		[self adjustSpacingConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																   attribute:NSLayoutAttributeTop
 																   relatedBy:NSLayoutRelationEqual
-																	  toItem:self.locationPicker
+																	  toItem:self.positionPickerView
 																   attribute:NSLayoutAttributeBottom
 																  multiplier:1.0f constant:8.0f]];
 	} else if ([supportPosition isEqualToString:@"Left"]) {
 		[self adjustAlignmentConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																	 attribute:NSLayoutAttributeCenterY
 																	 relatedBy:NSLayoutRelationEqual
-																		toItem:self.locationPicker
+																		toItem:self.positionPickerView
 																	 attribute:NSLayoutAttributeCenterY
 																	multiplier:1.0f
 																	  constant:0.0f]];
 		[self adjustSpacingConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																   attribute:NSLayoutAttributeTrailing
 																   relatedBy:NSLayoutRelationEqual
-																	  toItem:self.locationPicker
+																	  toItem:self.positionPickerView
 																   attribute:NSLayoutAttributeLeading
 																  multiplier:1.0f
 																	constant:-8.0f]];
@@ -102,14 +103,14 @@
 		[self adjustAlignmentConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																	 attribute:NSLayoutAttributeCenterY
 																	 relatedBy:NSLayoutRelationEqual
-																		toItem:self.locationPicker
+																		toItem:self.positionPickerView
 																	 attribute:NSLayoutAttributeCenterY
 																	multiplier:1.0f
 																	  constant:0.0f]];
 		[self adjustSpacingConstraint:[NSLayoutConstraint constraintWithItem:self.blockLabel
 																   attribute:NSLayoutAttributeLeading
 																   relatedBy:NSLayoutRelationEqual
-																	  toItem:self.locationPicker
+																	  toItem:self.positionPickerView
 																   attribute:NSLayoutAttributeTrailing
 																  multiplier:1.0f
 																	constant:8.0f]];

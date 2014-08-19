@@ -60,8 +60,8 @@
                                     <outlet property="delegate" destination="tD2-nG-GgL" id="U5J-oO-ZzV"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWx-f9-Qg0">
-                                <rect key="frame" x="49" y="274" width="44" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Storyboard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWx-f9-Qg0">
+                                <rect key="frame" x="7" y="274" width="86" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -80,8 +80,7 @@
                     <connections>
                         <outlet property="alignmentConstraint" destination="aXc-2P-CdE" id="PnX-hB-J2a"/>
                         <outlet property="blockLabel" destination="KWx-f9-Qg0" id="hZS-ww-T4l"/>
-                        <outlet property="locationPicker" destination="XbP-WU-jva" id="h2n-XR-teX"/>
-                        <outlet property="positionPickerView" destination="XbP-WU-jva" id="7Yp-MV-UUo"/>
+                        <outlet property="positionPickerView" destination="XbP-WU-jva" id="ljF-2Z-Ugc"/>
                         <outlet property="spacingConstraint" destination="jWS-gX-SoK" id="G8v-87-MuF"/>
                     </connections>
                 </viewController>

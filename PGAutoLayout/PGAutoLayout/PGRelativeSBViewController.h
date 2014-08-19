@@ -10,6 +10,4 @@
 
 @interface PGRelativeSBViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIPickerView *positionPickerView;
-
 @end
