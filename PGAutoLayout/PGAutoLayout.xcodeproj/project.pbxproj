@@ -23,6 +23,7 @@
 		0F069C94195F13B000B9BEB8 /* PGMainMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C93195F13B000B9BEB8 /* PGMainMenuTableViewController.m */; };
 		0F069C98195F1C7E00B9BEB8 /* PGRelativeSBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F069C97195F1C7E00B9BEB8 /* PGRelativeSBViewController.m */; };
 		0FADE28419A3BEDE006A68F5 /* PGRelativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FADE28319A3BEDE006A68F5 /* PGRelativeViewController.m */; };
+		0FADE28819A519F5006A68F5 /* UIView+ALPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FADE28719A519F5006A68F5 /* UIView+ALPosition.m */; };
 		0FFC7574199BCA37006A4E44 /* PGRelativeXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC7572199BCA37006A4E44 /* PGRelativeXibViewController.m */; };
 		0FFC7575199BCA37006A4E44 /* PGRelativeXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC7573199BCA37006A4E44 /* PGRelativeXibViewController.xib */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,8 @@
 		0F069C97195F1C7E00B9BEB8 /* PGRelativeSBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRelativeSBViewController.m; sourceTree = "<group>"; };
 		0FADE28219A3BEDE006A68F5 /* PGRelativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGRelativeViewController.h; sourceTree = "<group>"; };
 		0FADE28319A3BEDE006A68F5 /* PGRelativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRelativeViewController.m; sourceTree = "<group>"; };
+		0FADE28619A519F5006A68F5 /* UIView+ALPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ALPosition.h"; sourceTree = "<group>"; };
+		0FADE28719A519F5006A68F5 /* UIView+ALPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ALPosition.m"; sourceTree = "<group>"; };
 		0FFC7571199BCA37006A4E44 /* PGRelativeXibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGRelativeXibViewController.h; sourceTree = "<group>"; };
 		0FFC7572199BCA37006A4E44 /* PGRelativeXibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGRelativeXibViewController.m; sourceTree = "<group>"; };
 		0FFC7573199BCA37006A4E44 /* PGRelativeXibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PGRelativeXibViewController.xib; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		0F069C66195F102800B9BEB8 /* PGAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				0FADE28519A519C9006A68F5 /* SDK */,
 				0F9D4E2E196DAC8500E86866 /* Programmatic */,
 				0F069C95195F13E300B9BEB8 /* Xib */,
 				0F069C8F195F11C800B9BEB8 /* Storyboard */,
@@ -192,6 +196,15 @@
 				0FADE28319A3BEDE006A68F5 /* PGRelativeViewController.m */,
 			);
 			name = Programmatic;
+			sourceTree = "<group>";
+		};
+		0FADE28519A519C9006A68F5 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				0FADE28619A519F5006A68F5 /* UIView+ALPosition.h */,
+				0FADE28719A519F5006A68F5 /* UIView+ALPosition.m */,
+			);
+			name = SDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +307,7 @@
 			files = (
 				0F069C94195F13B000B9BEB8 /* PGMainMenuTableViewController.m in Sources */,
 				0FADE28419A3BEDE006A68F5 /* PGRelativeViewController.m in Sources */,
+				0FADE28819A519F5006A68F5 /* UIView+ALPosition.m in Sources */,
 				0FFC7574199BCA37006A4E44 /* PGRelativeXibViewController.m in Sources */,
 				0F069C6D195F102800B9BEB8 /* main.m in Sources */,
 				0F069C71195F102800B9BEB8 /* PGAppDelegate.m in Sources */,
