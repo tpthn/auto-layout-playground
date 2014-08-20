@@ -136,6 +136,13 @@
 	return alignmentArray;
 }
 
+#pragma mark - Reset
+
+- (void)removePositionConstraints
+{
+	
+}
+
 #pragma mark - Private
 
 - (NSMutableArray *)alignDirection:(NSString *)direction

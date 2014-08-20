@@ -43,4 +43,8 @@ static NSInteger kUIViewUnpinInset		= 0;
 
 - (NSMutableArray *)pinWithInset:(UIEdgeInsets)inset;
 
+#pragma mark - Reset
+
+- (void)removePositionConstraints;
+
 @end

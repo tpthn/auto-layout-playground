@@ -8,6 +8,8 @@
 
 #import "PGRelativeViewController.h"
 
+#import "UIView+ALPosition.h"
+
 @interface PGRelativeViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) UIPickerView *locationPicker;
@@ -31,23 +33,8 @@
 	self.supportedPositions = @[@"Top", @"Bottom", @"Left", @"Right"];
 	
 	[self.locationPicker selectRow:2 inComponent:0 animated:NO];
-	
-	[self.locationPicker addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[picker(==162)]"
-																	  options:NSLayoutFormatAlignAllCenterY
-																	  metrics:nil
-																		views:@{@"picker":self.locationPicker}]];
-	[self.locationPicker addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[picker(==118)]"
-																	  options:NSLayoutFormatAlignAllCenterX
-																	  metrics:nil
-																		views:@{@"picker":self.locationPicker}]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationPicker attribute:NSLayoutAttributeCenterX
-														  relatedBy:NSLayoutRelationEqual
-															 toItem:self.view attribute:NSLayoutAttributeCenterX
-														 multiplier:1.0f constant:0.0f]];
-	[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.locationPicker attribute:NSLayoutAttributeCenterY
-														  relatedBy:NSLayoutRelationEqual
-															 toItem:self.view attribute:NSLayoutAttributeCenterY
-														 multiplier:1.0f constant:0.0f]];
+	[self.locationPicker fixedSize:CGSizeMake(118, 162)];
+	[self.view addConstraints:[self.locationPicker centerAlignWithView:self.view]];
 	
 	[self refreshBlockLayoutWithVisualFormat:@"H:[block]-8-[picker]" options:NSLayoutFormatAlignAllCenterY];
 }
