@@ -94,22 +94,29 @@
 
 - (NSMutableArray *)centerAlignWithView:(UIView *)view
 {
-	NSLayoutConstraint *horizontalConstraint = [NSLayoutConstraint constraintWithItem:self
-																			attribute:NSLayoutAttributeCenterX
-																			relatedBy:NSLayoutRelationEqual
-																			   toItem:view
-																			attribute:NSLayoutAttributeCenterX
-																		   multiplier:1.0f
-																			 constant:0.0f];
-	NSLayoutConstraint *verticalConstraint = [NSLayoutConstraint constraintWithItem:self
-																		  attribute:NSLayoutAttributeCenterY
-																		  relatedBy:NSLayoutRelationEqual
-																			 toItem:view
-																		  attribute:NSLayoutAttributeCenterY
-																		 multiplier:1.0f
-																		   constant:0.0f];
+	NSLayoutConstraint *horizontalConstraint = [self centerAlignWithView:view direction:@"H"];
+	NSLayoutConstraint *verticalConstraint = [self centerAlignWithView:view direction:@"V"];
 	NSMutableArray *allignmentArray = [NSMutableArray arrayWithObjects:horizontalConstraint, verticalConstraint, nil];
+	
 	return allignmentArray;
+}
+
+- (NSLayoutConstraint *)centerAlignWithView:(UIView *)view direction:(NSString *)direction
+{
+	NSLayoutAttribute attribute = NSLayoutAttributeCenterX;
+	
+	if ([direction isEqualToString:@"H"]) {
+		attribute = NSLayoutAttributeCenterY;
+	}
+	
+	NSLayoutConstraint *layoutConstraint = [NSLayoutConstraint constraintWithItem:self
+																		attribute:attribute
+																		relatedBy:NSLayoutRelationEqual
+																		   toItem:view
+																		attribute:attribute
+																	   multiplier:1.0f
+																		 constant:0.0f];
+	return layoutConstraint;
 }
 
 #pragma mark - Containment

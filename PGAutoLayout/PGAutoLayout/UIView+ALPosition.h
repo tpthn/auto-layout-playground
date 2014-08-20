@@ -37,6 +37,8 @@ static NSInteger kUIViewUnpinInset		= 0;
 
 - (NSMutableArray *)centerAlignWithView:(UIView *)view;
 
+- (NSLayoutConstraint *)centerAlignWithView:(UIView *)view direction:(NSString *)direction;
+
 #pragma mark - Containment
 
 - (NSMutableArray *)pinWithInset:(UIEdgeInsets)inset;
