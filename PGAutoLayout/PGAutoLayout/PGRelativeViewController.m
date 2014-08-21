@@ -36,7 +36,7 @@
 	[self.locationPicker fixedSize:CGSizeMake(118, 162)];
 	[self.view addConstraints:[self.locationPicker centerAlignWithView:self.view]];
 	
-	[self refreshBlockLayoutWithVisualFormat:@"H:[block]-8-[picker]" options:NSLayoutFormatAlignAllCenterY];
+	[self placeBlockAtPosition:@"Left"];
 }
 
 - (UIPickerView *)locationPicker
@@ -86,15 +86,7 @@
 {
 	NSString *supportPosition = [self.supportedPositions objectAtIndex:row];
 	
-	if ([supportPosition isEqualToString:@"Top"]) {
-		[self refreshBlockLayoutWithVisualFormat:@"V:[block]-8-[picker]" options:NSLayoutFormatAlignAllCenterX];
-	} else if ([supportPosition isEqualToString:@"Bottom"]) {
-		[self refreshBlockLayoutWithVisualFormat:@"V:[picker]-8-[block]" options:NSLayoutFormatAlignAllCenterX];
-	} else if ([supportPosition isEqualToString:@"Left"]) {
-		[self refreshBlockLayoutWithVisualFormat:@"H:[block]-8-[picker]" options:NSLayoutFormatAlignAllCenterY];
-	} else {
-		[self refreshBlockLayoutWithVisualFormat:@"H:[picker]-8-[block]" options:NSLayoutFormatAlignAllCenterY];
-	}
+	[self placeBlockAtPosition:supportPosition];
 }
 
 #pragma mark - Private
@@ -113,15 +105,31 @@
 	}
 }
 
-- (void)refreshBlockLayoutWithVisualFormat:(NSString *)format options:(NSLayoutFormatOptions)option
+- (void)placeBlockAtPosition:(NSString *)supportPosition
 {
 	[self removeAllConstrain];
 	
-	self.blockLayout = [NSLayoutConstraint constraintsWithVisualFormat:format
-															   options:option
-															   metrics:nil
-																 views:@{@"block":self.blockLabel,
-																		 @"picker":self.locationPicker}];
+	if ([supportPosition isEqualToString:@"Top"]) {
+		self.blockLayout = [self.blockLabel verticalAlign:NSLayoutFormatAlignAllCenterX
+												 withView:self.locationPicker
+												 distance:8
+											  topToBottom:YES];
+	} else if ([supportPosition isEqualToString:@"Bottom"]) {
+		self.blockLayout = [self.blockLabel verticalAlign:NSLayoutFormatAlignAllCenterX
+												 withView:self.locationPicker
+												 distance:8
+											  topToBottom:NO];
+	} else if ([supportPosition isEqualToString:@"Left"]) {
+		self.blockLayout = [self.blockLabel horizontalAlign:NSLayoutFormatAlignAllCenterY
+												   withView:self.locationPicker
+												   distance:8
+												leftToRight:YES];
+	} else {
+		self.blockLayout = [self.blockLabel horizontalAlign:NSLayoutFormatAlignAllCenterY
+												   withView:self.locationPicker
+												   distance:8
+												leftToRight:NO];
+	}
 	
 	[self installAllContrain];
 }
