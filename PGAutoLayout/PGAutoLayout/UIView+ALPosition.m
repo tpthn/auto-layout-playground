@@ -171,7 +171,7 @@
 	NSArray *layouts = [NSLayoutConstraint constraintsWithVisualFormat:formatLayout
 															   options:alignmentOption
 															   metrics:metrics
-																 views:@{firstView:self, secondView:siblingView}];
+																 views:@{@"view":self, @"otherView":siblingView}];
 	
 	NSMutableArray *alignmentArray = [NSMutableArray arrayWithArray:layouts];
 	return alignmentArray;
