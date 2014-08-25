@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-static NSInteger kUIViewAquaDistance	= -1;
-static NSInteger kUIViewUnpinInset		= 0;
+static NSInteger kUIViewAquaDistance	= -2;
+static NSInteger kUIViewUnpinInset		= -1;
 
 @interface UIView (ALPosition)
 

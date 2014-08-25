@@ -9,6 +9,7 @@
 #import "PGMainMenuTableViewController.h"
 #import "PGRelativeXibViewController.h"
 #import "PGRelativeViewController.h"
+#import "PGBorderViewController.h"
 
 #define kPGMainMenuTableViewControllerXibKey				@"Xib Layout"
 #define kPGMainMenuTableViewControllerStoryboardKey			@"Storyboard Layout"
@@ -99,7 +100,11 @@ NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewContr
 			[self loadRelativeXibController];
 			break;
 		case MainMenuTableSectionProgrammatic:
-			[self loadRelativeController];
+			if (indexPath.row == 0) {
+				[self loadBorderViewController];
+			} else {
+				[self loadRelativeController];
+			}
 			break;
 		default:
 			break;
@@ -154,6 +159,13 @@ NSString *const PGMainMenuTableViewControllerCellID = @"PGMainMenuTableViewContr
 	PGRelativeViewController *viewController = [[PGRelativeViewController alloc] init];
 	
 	[self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)loadBorderViewController
+{
+	PGBorderViewController *viewCOntroller = [[PGBorderViewController alloc] init];
+	
+	[self.navigationController pushViewController:viewCOntroller animated:YES];
 }
 
 @end
