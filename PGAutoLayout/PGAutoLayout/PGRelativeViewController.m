@@ -8,8 +8,6 @@
 
 #import "PGRelativeViewController.h"
 
-#import "UIView+ALPosition.h"
-
 @interface PGRelativeViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, strong) UIPickerView *locationPicker;
@@ -33,8 +31,8 @@
 	self.supportedPositions = @[@"Top", @"Bottom", @"Left", @"Right"];
 	
 	[self.locationPicker selectRow:2 inComponent:0 animated:NO];
-	[self.locationPicker fixedSize:CGSizeMake(118, 162)];
-	[self.view addConstraints:[self.locationPicker centerAlignWithView:self.view]];
+	[self.locationPicker ul_fixedSize:CGSizeMake(118, 162)];
+	[self.view addConstraints:[self.locationPicker ul_centerAlignWithView:self.view]];
 	
 	[self placeBlockAtPosition:@"Left"];
 }
@@ -110,22 +108,22 @@
 	[self removeAllConstrain];
 	
 	if ([supportPosition isEqualToString:@"Top"]) {
-		self.blockLayout = [self.blockLabel verticalAlign:NSLayoutFormatAlignAllCenterX
+		self.blockLayout = [self.blockLabel ul_verticalAlign:NSLayoutFormatAlignAllCenterX
 												 withView:self.locationPicker
 												 distance:8
 											  topToBottom:YES];
 	} else if ([supportPosition isEqualToString:@"Bottom"]) {
-		self.blockLayout = [self.blockLabel verticalAlign:NSLayoutFormatAlignAllCenterX
+		self.blockLayout = [self.blockLabel ul_verticalAlign:NSLayoutFormatAlignAllCenterX
 												 withView:self.locationPicker
 												 distance:8
 											  topToBottom:NO];
 	} else if ([supportPosition isEqualToString:@"Left"]) {
-		self.blockLayout = [self.blockLabel horizontalAlign:NSLayoutFormatAlignAllCenterY
+		self.blockLayout = [self.blockLabel ul_horizontalAlign:NSLayoutFormatAlignAllCenterY
 												   withView:self.locationPicker
 												   distance:8
 												leftToRight:YES];
 	} else {
-		self.blockLayout = [self.blockLabel horizontalAlign:NSLayoutFormatAlignAllCenterY
+		self.blockLayout = [self.blockLabel ul_horizontalAlign:NSLayoutFormatAlignAllCenterY
 												   withView:self.locationPicker
 												   distance:8
 												leftToRight:NO];

@@ -7,8 +7,6 @@
 //
 
 #import "PGBorderViewController.h"
-#import "UIView+ALPosition.h"
-#import "NSLayoutConstraint+UL.h"
 
 @interface PGBorderViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -31,8 +29,8 @@
 	[self.view addSubview:self.locationPicker];
 	[self.view addSubview:self.blockLabel];
 	
-	[self.locationPicker fixedSize:CGSizeMake(170, 162)];
-	[self.view addConstraints:[self.locationPicker centerAlignWithView:self.view]];
+	[self.locationPicker ul_fixedSize:CGSizeMake(170, 162)];
+	[self.view addConstraints:[self.locationPicker ul_centerAlignWithView:self.view]];
 	
 	self.supportedPositions = @[@"Top Left",
 								@"Top Center",
@@ -106,7 +104,7 @@
 - (void)removeAllConstrain
 {
 	for (NSLayoutConstraint *constraint in self.blockLayout) {
-		[constraint remove];
+		[constraint ul_remove];
 	}
 }
 
@@ -124,48 +122,48 @@
 	NSMutableArray *compoundLayouts = [NSMutableArray array];
 	
 	if ([supportPosition isEqualToString:@"Top Left"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(8, 8, kUIViewUnpinInset, kUIViewUnpinInset)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(8, 8, kUIViewUnpinInset, kUIViewUnpinInset)];
 	
 	} else if ([supportPosition isEqualToString:@"Top Center"]) {
-		[compoundLayouts addObjectsFromArray:[self.blockLabel pinWithInset:UIEdgeInsetsMake(8, kUIViewUnpinInset, kUIViewUnpinInset, kUIViewUnpinInset)]];
-		[compoundLayouts addObject:[self.blockLabel centerAlignWithView:self.view direction:@"V"]];
+		[compoundLayouts addObjectsFromArray:[self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(8, kUIViewUnpinInset, kUIViewUnpinInset, kUIViewUnpinInset)]];
+		[compoundLayouts addObject:[self.blockLabel ul_centerAlignWithView:self.view direction:@"V"]];
 		self.blockLayout = compoundLayouts;
 	
 	} else if ([supportPosition isEqualToString:@"Top Right"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(8, kUIViewUnpinInset, kUIViewUnpinInset, 8)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(8, kUIViewUnpinInset, kUIViewUnpinInset, 8)];
 	
 	} else if ([supportPosition isEqualToString:@"Left Center"]) {
-		[compoundLayouts addObjectsFromArray:[self.blockLabel pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, 8, kUIViewUnpinInset, kUIViewUnpinInset)]];
-		[compoundLayouts addObject:[self.blockLabel centerAlignWithView:self.view direction:@"H"]];
+		[compoundLayouts addObjectsFromArray:[self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, 8, kUIViewUnpinInset, kUIViewUnpinInset)]];
+		[compoundLayouts addObject:[self.blockLabel ul_centerAlignWithView:self.view direction:@"H"]];
 		self.blockLayout = compoundLayouts;
 	
 	} else if ([supportPosition isEqualToString:@"Right Center"]) {
-		[compoundLayouts addObjectsFromArray:[self.blockLabel pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, kUIViewUnpinInset, kUIViewUnpinInset, 8)]];
-		[compoundLayouts addObject:[self.blockLabel centerAlignWithView:self.view direction:@"H"]];
+		[compoundLayouts addObjectsFromArray:[self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, kUIViewUnpinInset, kUIViewUnpinInset, 8)]];
+		[compoundLayouts addObject:[self.blockLabel ul_centerAlignWithView:self.view direction:@"H"]];
 		self.blockLayout = compoundLayouts;
 	
 	} else if ([supportPosition isEqualToString:@"Bottom Left"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, 8, 8, kUIViewUnpinInset)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, 8, 8, kUIViewUnpinInset)];
 	
 	} else if ([supportPosition isEqualToString:@"Bottom Center"]) {
-		[compoundLayouts addObjectsFromArray:[self.blockLabel pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, kUIViewUnpinInset, 8, kUIViewUnpinInset)]];
-		[compoundLayouts addObject:[self.blockLabel centerAlignWithView:self.view direction:@"V"]];
+		[compoundLayouts addObjectsFromArray:[self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, kUIViewUnpinInset, 8, kUIViewUnpinInset)]];
+		[compoundLayouts addObject:[self.blockLabel ul_centerAlignWithView:self.view direction:@"V"]];
 		self.blockLayout = compoundLayouts;
 		
 	} else if ([supportPosition isEqualToString:@"Bottom Right"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, kUIViewUnpinInset, 8, 8)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, kUIViewUnpinInset, 8, 8)];
 	
 	} else if ([supportPosition isEqualToString:@"Stretch Top"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(8, 8, kUIViewUnpinInset, 8)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(8, 8, kUIViewUnpinInset, 8)];
 		
 	} else if ([supportPosition isEqualToString:@"Stretch Left"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(8, 8, 8, kUIViewUnpinInset)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(8, 8, 8, kUIViewUnpinInset)];
 		
 	} else if ([supportPosition isEqualToString:@"Stretch Right"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(8, kUIViewUnpinInset, 8, 8)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(8, kUIViewUnpinInset, 8, 8)];
 		
 	} else if ([supportPosition isEqualToString:@"Stretch Bottom"]) {
-		self.blockLayout = [self.blockLabel pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, 8, 8, 8)];
+		self.blockLayout = [self.blockLabel ul_pinWithInset:UIEdgeInsetsMake(kUIViewUnpinInset, 8, 8, 8)];
 		
 	}
 	
